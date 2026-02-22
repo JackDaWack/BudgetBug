@@ -4,3 +4,4 @@
 -Implemented placeholder code for index.html.
 -Created progress log file.
 -Updated readme.
+-Added FastAPI in backend.
