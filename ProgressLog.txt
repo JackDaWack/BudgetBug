@@ -1,1 +1,6 @@
 2/22/2026
+-Created github repo and readme file establishing the project and author profile.
+-Created backend and frontend directories with placeholder files for future code implementation.
+-Implemented placeholder code for index.html.
+-Created progress log file.
+-Updated readme.
