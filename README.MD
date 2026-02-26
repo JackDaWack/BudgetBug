@@ -1,8 +1,14 @@
 # BudgetBug
 A simple budgeting app that you can use to enter your income and expenses as well as a budgeting target for financial goals such as a vacation or buying a house. 
 
-## Project Status
+### Project Status
 This project is currently in development and not yet functional. See ProgressLog.txt for updates to the project.
+
+#### Planned Features
+- Friendly UI template.
+- User authentication with login and registry.
+- Financial profiles that log income, current savings and expenses.
+- Financial goals.
 
 ### Author Profile
 Jackson Netter
