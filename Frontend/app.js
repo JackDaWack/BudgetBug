@@ -1,5 +1,16 @@
-function detect_signal() {
+async function detect_signal() {
+    console.log("Signal Detected!");
+    try {
+        const response = await fetch("http://localhost:8000/api/run", {
+            method: "POST",
+        });
+
+        const data = await response.json();
+        console.log("Backend response:", data);
+    } catch (err) {
+        console.error("Error calling backend:", err);
+    }
 
 }
 const signal = document.getElementById("signal");
-signal.addEventListener("click",detect_signal);
+signal.addEventListener("click", detect_signal);
