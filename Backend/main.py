@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware as CORS
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pymongo import MongoClient
+from pathlib import Path
 
 app = FastAPI()
 
@@ -11,10 +14,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+frontend_path = Path(__file__).parent.parent / "frontend"
+app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+
 @app.get("/")
 def home():
     print("We're live!")
-    return {"message": "We're live!"}
+    return FileResponse(frontend_path / "index.html")
 
 def signal_recieved():
     print("We made contact!")

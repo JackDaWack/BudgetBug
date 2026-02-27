@@ -6,6 +6,7 @@
 -Began implementation of app.js to handle the event.
 -Implemented CORS Middleware in main.py.
 -Implemented interaction with backend in app.js.
+-Implemented more frontend connectivitity in main.py.
 
 2/25/2026
 -Added planned features section to and updated readme file.
