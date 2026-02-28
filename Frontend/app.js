@@ -1,10 +1,7 @@
 async function detect_signal() {
     console.log("Signal Detected!");
     try {
-        const response = await fetch("http://localhost:8000/api/run", {
-            method: "POST",
-        });
-
+        const response = await fetch("/api/run", {method: "POST"});
         const data = await response.json();
         console.log("Backend response:", data);
     } catch (err) {
