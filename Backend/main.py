@@ -31,6 +31,4 @@ async def run_function():
     return {"status": "success"}
 
 def database_connect():
-    client = MongoClient("mongodb://localhost:27017/")
-    db = client["mydatabase"]
-    return db
+    return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
