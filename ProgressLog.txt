@@ -1,3 +1,7 @@
+3/2/2026
+-Added login and register html files.
+-Implemented baseline for login and user registry implementation.
+
 2/28/2028
 -Condensed mongo database connection code in main.py.
 -Cut calc.cpp as it's planned functionality can be handled in Python. 
