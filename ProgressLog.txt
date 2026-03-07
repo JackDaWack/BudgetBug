@@ -1,6 +1,8 @@
 3/4/2026
 -Implemented User class in auth.py.
 -Implemented user retrieval.
+-Implemented user registry.
+-Simplified user retrieval code.
 
 3/2/2026
 -Added login and register html files.
