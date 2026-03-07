@@ -18,8 +18,12 @@ def retrieve_user(username: str):
     return None
 
 @app.get("/login")
-def login():
-    return
+def login(username: str, password: str):
+    db = main.database_connect()
+    if db["users"].find_one({"username": username}):
+        if db["users"].find_one({"username": username})["password"] is password:
+            return {"status": "success", "message": "User logged in successfully"}
+    return {"status": "error", "message": "User login failed."}
 
 @app.get("/register")
 def register(username: str, email: str, password: str):

@@ -3,6 +3,7 @@
 -Implemented user retrieval.
 -Implemented user registry.
 -Simplified user retrieval code.
+-Added user login implementation.
 
 3/2/2026
 -Added login and register html files.
