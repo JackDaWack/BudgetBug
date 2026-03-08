@@ -1,3 +1,6 @@
+3/8/2026
+-Began implementation of login and user registry functions in auth.js.
+
 3/7/2026
 -Added auth.js file as a go-between for authentication pages and auth.py.
 -Corrected date of entry in ProgressLog.txt.
