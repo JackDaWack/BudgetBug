@@ -1,6 +1,7 @@
 3/7/2026
 -Added auth.js file as a go-between for authentication pages and auth.py.
 -Corrected date of entry in ProgressLog.txt.
+-Implemented async login and registry functions to auth.js for later implementation.
 
 3/6/2026
 -Implemented User class in auth.py.
