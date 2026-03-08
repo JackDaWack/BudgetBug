@@ -1,3 +1,6 @@
+3/7/2026
+-Added auth.js file as a go-between for authentication pages and auth.py.
+
 3/4/2026
 -Implemented User class in auth.py.
 -Implemented user retrieval.
