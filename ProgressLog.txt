@@ -3,6 +3,7 @@
 -Corrected date of entry in ProgressLog.txt.
 -Implemented async login and registry functions to auth.js for later implementation.
 -Switched src script files from app.js to auth.js in login.html and register.html files.
+-Added event listenters.
 
 3/6/2026
 -Implemented User class in auth.py.
