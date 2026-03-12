@@ -1,3 +1,8 @@
+3/12/2026
+-Implemented login function in auth.js.
+-Implemented Login_Data class in auth.py.
+-Edited and implemented login function in auth.py.
+
 3/8/2026
 -Began implementation of login and user registry functions in auth.js.
 

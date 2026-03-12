@@ -1,4 +1,5 @@
 import main
+from pydantic import BaseModel
 
 app = main.app
 
@@ -11,19 +12,24 @@ class User:
     def to_dict(self):
         return {"username" : self.username, "email" : self.email, "password" : self.password}
 
+class Login_Data(BaseModel):
+    username: str
+    password: str
+    
+
 def retrieve_user(username: str):
     db = main.database_connect()
     if db["users"].find_one({"username": username}):
         return User(db["users"].find_one({"username": username})["username"], db["users"].find_one({"username": username})["email"], db["users"].find_one({"username": username})["password"])
     return None
 
-@app.get("/login")
-def login(username: str, password: str):
+@app.post("/login")
+def login(data: Login_Data):
     db = main.database_connect()
-    if db["users"].find_one({"username": username}):
-        if db["users"].find_one({"username": username})["password"] is password:
-            return {"status": "success", "message": "User logged in successfully"}
-    return {"status": "error", "message": "User login failed."}
+    user = db["users"].find_one({"username": data.username})
+    if user and user["password"] == data.password:
+        return {"status": "success", "message": "User logged in successfully"}
+    return {"status": "error", "message": "User login failed"}
 
 @app.get("/register")
 def register(username: str, email: str, password: str):
