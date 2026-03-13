@@ -1,3 +1,7 @@
+3/13/2026
+-Updated readme to reorganize list of planned features by order of when each will be implemented.
+-Labeled user authentication objective in readme as In-Progress.
+
 3/12/2026
 -Implemented login function in auth.js.
 -Implemented Login_Data class in auth.py.
