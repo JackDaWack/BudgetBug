@@ -1,7 +1,7 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware as CORS
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
 
@@ -18,7 +18,10 @@ frontend_path = Path(__file__).parent.parent / "frontend"
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 @app.get("/")
-def home():
+def home(request: Request):
+    incoming_user = request.cookies.get("user")
+    if not incoming_user:
+        return RedirectResponse(url="/login.html")
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 

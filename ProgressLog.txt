@@ -1,3 +1,6 @@
+3/15/2026
+-Edited home in main.py to redirect unsigned-in users to login page.
+
 3/13/2026
 -Updated readme to reorganize list of planned features by order of when each will be implemented.
 -Labeled user authentication objective in readme as In-Progress.
