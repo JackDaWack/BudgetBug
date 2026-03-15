@@ -17,8 +17,14 @@ app.add_middleware(
 frontend_path = Path(__file__).parent.parent / "frontend"
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
+def database_connect():
+    return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
+
 @app.get("/")
 def home(request: Request):
+    db = database_connect()
+    if db["users"].find_one({"username": "Developer01"}):
+        print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
         return FileResponse(frontend_path / "login.html")
@@ -33,5 +39,3 @@ async def run_function():
     signal_recieved()
     return {"status": "success"}
 
-def database_connect():
-    return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]

@@ -3,6 +3,9 @@
 -Began testing functionality.
 -Changed RedirectResponse to FileResponse witht frontend path in main.py's home function.
 -Login testing found successful in detecting unregistered users.
+-Moved database_connect function within main.py.
+-Added condition to check if the user is the developer.
+-Added link to user registry in login.html
 
 3/13/2026
 -Updated readme to reorganize list of planned features by order of when each will be implemented.
