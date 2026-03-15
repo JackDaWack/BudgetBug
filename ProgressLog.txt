@@ -2,6 +2,7 @@
 -Edited home in main.py to redirect unsigned-in users to login page.
 -Began testing functionality.
 -Changed RedirectResponse to FileResponse witht frontend path in main.py's home function.
+-Login testing found successful in detecting unregistered users.
 
 3/13/2026
 -Updated readme to reorganize list of planned features by order of when each will be implemented.
