@@ -21,7 +21,7 @@ app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 def home(request: Request):
     incoming_user = request.cookies.get("user")
     if not incoming_user:
-        return RedirectResponse(url="/login.html")
+        return FileResponse(frontend_path / "login.html")
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 
