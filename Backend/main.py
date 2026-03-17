@@ -22,9 +22,9 @@ def database_connect():
 
 @app.get("/")
 def home(request: Request):
-    db = database_connect()
-    if db["users"].find_one({"username": "Developer01"}):
-        print("Developer01 exists in the database")
+    #db = database_connect()
+    #if db["users"].find_one({"username": "Developer01"}):
+    #    print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
         return FileResponse(frontend_path / "login.html")
