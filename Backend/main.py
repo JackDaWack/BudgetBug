@@ -4,8 +4,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
+from auth import router as auth_router
 
 app = FastAPI()
+app.include_router(auth_router)
+
 
 app.add_middleware(
     CORS,
@@ -27,7 +30,7 @@ def home(request: Request):
     #    print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
-        return FileResponse(frontend_path / "login.html")
+        return RedirectResponse(url="/login.html")
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 

@@ -1,7 +1,10 @@
-import main
+#import main
 from pydantic import BaseModel
+from fastapi import APIRouter
 
-app = main.app
+router = APIRouter()
+
+#app = main.app
 
 class User:
     def __init__(self, username: str, email: str, password: str):
@@ -27,19 +30,21 @@ def retrieve_user(username: str):
         return User(db["users"].find_one({"username": username})["username"], db["users"].find_one({"username": username})["email"], db["users"].find_one({"username": username})["password"])
     return None
 
-@app.post("/login")
+@router.post("/login")
 def login(data: Login_Data):
-    db = main.database_connect()
-    user = db["users"].find_one({"username": data.username})
-    if user and user["password"] == data.password:
-        return {"status": "success", "message": "User logged in successfully"}
-    return {"status": "error", "message": "User login failed"}
+    #db = main.database_connect()
+    #user = db["users"].find_one({"username": data.username})
+    #if user and user["password"] == data.password:
+    #    return {"status": "success", "message": "User logged in successfully"}
+    #return {"status": "error", "message": "User login failed"}
+    return {"status": "success", "message": "Functionality not implemented yet"}
 
-@app.post("/register")
+@router.post("/register")
 def register(data: Register_Data):
-    db = main.database_connect()
-    if db["users"].find_one({"username": data.username}):
-        return {"status": "error", "message": "User already exists"}
-    user  = User(data.username,data.email,data.password)
-    db["users"].insert_one(user.to_dict())
-    return {"status": "success", "message": "User registered in successfully"}
+    #db = main.database_connect()
+    #if db["users"].find_one({"username": data.username}):
+    #    return {"status": "error", "message": "User already exists"}
+    #user = User(data.username, data.email, data.password)
+    #db["users"].insert_one(user.to_dict())
+    #return {"status": "success", "message": "User registered in successfully"}
+    return {"status": "success", "message": "Functionality not implemented yet"}
