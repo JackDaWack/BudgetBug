@@ -5,3 +5,11 @@ Description:
 Example.
 Resolution:
 Solution.
+
+[Open] Login Redirect not operational.
+Date Opened: 3/18/2026
+Date Closed: N/A 
+Description:
+Login page not found when main page redirects unlogged users to login screen.
+Resolution:
+[In Progress]
