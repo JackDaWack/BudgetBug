@@ -7,10 +7,10 @@ Example.
 Resolution:
 Solution.
 
-[Open] User registry not found.
+[Closed] User registry not found.
 ID: 0003
 Date Opened: 3/18/2026
-Date Closed: N/A
+Date Closed: 3/18/2026
 Description:
 Link to user registry page in login.html fails to send user to register page and returns
 "405 Method Not Allowed" instead.

@@ -10,6 +10,7 @@
 -Implemented register-page function to direct users to user registry page and connect the registry to the project.
 -Edited description in log 0003.
 -Edited url in login page's link reference.
+-Closed log 0003.
 
 3/17/2026
 -Commented out lines 25-27 in main.py for testing purposes.
