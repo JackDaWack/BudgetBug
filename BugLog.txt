@@ -7,7 +7,17 @@ Example.
 Resolution:
 Solution.
 
-[Closed] Login Redirect not operational.
+[Open] User registry not found.
+ID: 0003
+Date Opened: 3/18/2026
+Date Closed: N/A
+Description:
+Link to user registry page in login.html fails to send user to register page and returns
+"404 Not Found" instead.
+Resolution:
+[In Progress]
+
+[Closed] Login redirect not operational.
 ID: 0002
 Date Opened: 3/18/2026
 Date Closed: 3/18/2026 
