@@ -1,6 +1,9 @@
 3/18/2026
 -Created BugLog.txt to track bugs and their resolutions with a sample format for reprts to follow.
 -Opened new log in BugLog.
+-Changed url in the main.py home function's RedirectResponse to "static/login.html".
+-Updated BugLog format.
+-Closed log 0002.
 
 3/17/2026
 -Commented out lines 25-27 in main.py for testing purposes.

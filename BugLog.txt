@@ -1,4 +1,5 @@
 [Status] Title
+ID: 0001
 Date Opened: 3/18/2026
 Date Closed: 3/18/2026
 Description:
@@ -6,10 +7,11 @@ Example.
 Resolution:
 Solution.
 
-[Open] Login Redirect not operational.
+[Closed] Login Redirect not operational.
+ID: 0002
 Date Opened: 3/18/2026
-Date Closed: N/A 
+Date Closed: 3/18/2026 
 Description:
 Login page not found when main page redirects unlogged users to login screen.
 Resolution:
-[In Progress]
+Changed url in the main.py home function's RedirectResponse to "static/login.html".

@@ -30,7 +30,7 @@ def home(request: Request):
     #    print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
-        return RedirectResponse(url="/login.html")
+        return RedirectResponse(url= "static/login.html")
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 
