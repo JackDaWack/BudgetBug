@@ -13,9 +13,11 @@ Date Opened: 3/18/2026
 Date Closed: N/A
 Description:
 Link to user registry page in login.html fails to send user to register page and returns
-"404 Not Found" instead.
+"405 Method Not Allowed" instead.
 Resolution:
-[In Progress]
+Implemented register-page function to direct users to user registry page and connect the 
+registry to the project. Edited url in login page's link reference.
+
 
 [Closed] Login redirect not operational.
 ID: 0002

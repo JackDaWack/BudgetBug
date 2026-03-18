@@ -6,13 +6,13 @@
 </head>
 <body>
     <h1>Login to BudgetBug</h1>
-    <a href="static/register.html">Create an account</a>
-    <form id="login-form">
+    <a href="/register-page">Create an account</a>
+    <form id="login-form" method="post" action="/login">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
         <button type="submit" id="login-button">Login</button>
     </form>
-    <script src="static/auth.js"></script>
+    <script src="/static/auth.js"></script>
 </body>

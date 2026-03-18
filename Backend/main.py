@@ -23,6 +23,14 @@ app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 def database_connect():
     return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
 
+@app.get("/login-page")
+def login_page():
+    return FileResponse(frontend_path / "login.html")
+
+@app.get("/register-page")
+def register_page():
+    return FileResponse(frontend_path / "register.html")
+
 @app.get("/")
 def home(request: Request):
     #db = database_connect()
@@ -30,7 +38,7 @@ def home(request: Request):
     #    print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
-        return RedirectResponse(url= "static/login.html")
+        return RedirectResponse(url="/login-page")
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 
