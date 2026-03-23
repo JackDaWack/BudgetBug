@@ -1,4 +1,6 @@
 #import main
+import sqlite3
+
 from pydantic import BaseModel
 from fastapi import APIRouter
 
@@ -28,6 +30,15 @@ def retrieve_user(username: str):
     db = main.database_connect()
     if db["users"].find_one({"username": username}):
         return User(db["users"].find_one({"username": username})["username"], db["users"].find_one({"username": username})["email"], db["users"].find_one({"username": username})["password"])
+    return None
+
+def get_user(username: str):
+    db = sqlite3.connect("users.db").cursor()
+    db.execute("SELECT * FROM users WHERE username = ?", (username,))
+    user = db.fetchone()
+    db.connection.close()
+    if user:
+        return {"id": user[0], "username": user[1], "email": user[2], "password": user[3]}
     return None
 
 
