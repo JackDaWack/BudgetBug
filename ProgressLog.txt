@@ -2,6 +2,7 @@
 -Implemented sqlite database as a temporary placeholder for MongoDB.
 -Edited init_db in main.py.
 -Implemented get_user function in auth.py.
+-Added implementation to login function in auth.py that utilizes sqlite and sql database implementation.
 
 3/18/2026
 -Created BugLog.txt to track bugs and their resolutions with a sample format for reprts to follow.

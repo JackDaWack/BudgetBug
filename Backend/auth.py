@@ -1,6 +1,7 @@
 #import main
 import sqlite3
 
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from fastapi import APIRouter
 
@@ -50,7 +51,9 @@ def login(data: Login_Data):
     #if user and user["password"] == data.password:
     #    return {"status": "success", "message": "User logged in successfully"}
     #return {"status": "error", "message": "User login failed"}
-    return {"status": "success", "message": "Functionality not implemented yet"}
+    if get_user(data.username) and get_user(data.username)["password"] == data.password:
+        return RedirectResponse(url="/", status_code=302)
+    return {"status": "error", "message": "User login failed"}
 
 @router.post("/register")
 def register(data: Register_Data):
