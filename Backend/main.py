@@ -25,7 +25,7 @@ def database_connect():
     return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
 
 def init_db():
-    db = sqlite3.connect("addrs.db").cursor()
+    db = sqlite3.connect("users.db").cursor()
     db.execute("""
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,6 +47,7 @@ def register_page():
 
 @app.get("/")
 def home(request: Request):
+    init_db()
     #db = database_connect()
     #if db["users"].find_one({"username": "Developer01"}):
     #    print("Developer01 exists in the database")
