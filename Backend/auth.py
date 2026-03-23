@@ -30,6 +30,8 @@ def retrieve_user(username: str):
         return User(db["users"].find_one({"username": username})["username"], db["users"].find_one({"username": username})["email"], db["users"].find_one({"username": username})["password"])
     return None
 
+
+
 @router.post("/login")
 def login(data: Login_Data):
     #db = main.database_connect()

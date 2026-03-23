@@ -5,6 +5,7 @@ from fastapi.responses import FileResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
 from auth import router as auth_router
+from dbm import sqlite3
 
 app = FastAPI()
 app.include_router(auth_router)
@@ -22,6 +23,19 @@ app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 def database_connect():
     return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
+
+def init_db():
+    db = sqlite3.connect("addrs.db").cursor()
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE,
+            email TEXT UNIQUE,
+            password TEXT
+        )
+    """)
+    db.connection.commit()
+    db.connection.close()
 
 @app.get("/login-page")
 def login_page():
