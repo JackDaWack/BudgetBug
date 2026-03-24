@@ -68,4 +68,5 @@ def register(data: Register_Data):
     #user = User(data.username, data.email, data.password)
     #db["users"].insert_one(user.to_dict())
     #return {"status": "success", "message": "User registered in successfully"}
-    return {"status": "success", "message": "Functionality not implemented yet"}
+    create_user(data.username, data.email, data.password)
+    return {"status": "success", "message": "User registered in successfully"}

@@ -1,5 +1,6 @@
 3/24/2026
--Implemented user creation function in auth.py using sqlite
+-Implemented user creation function in auth.py using sqlite.
+-Implemented user creation in register function in auth.py.
 
 3/23/2026
 -Implemented sqlite database as a temporary placeholder for MongoDB.
