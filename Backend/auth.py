@@ -69,4 +69,4 @@ def register(data: Register_Data):
     #db["users"].insert_one(user.to_dict())
     #return {"status": "success", "message": "User registered in successfully"}
     create_user(data.username, data.email, data.password)
-    return {"status": "success", "message": "User registered in successfully"}
+    return RedirectResponse(url="/login-page", status_code=302)
