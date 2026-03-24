@@ -42,6 +42,11 @@ def get_user(username: str):
         return {"id": user[0], "username": user[1], "email": user[2], "password": user[3]}
     return None
 
+def create_user(username: str, email: str, password: str):
+    db = sqlite3.connect("users.db").cursor()
+    db.execute("INSERT INTO users (username, email, password) VALUES (?, ?, ?)", (username, email, password))
+    db.connection.commit()
+    db.connection.close()
 
 
 @router.post("/login")
