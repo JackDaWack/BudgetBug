@@ -1,9 +1,9 @@
 #import main
 import sqlite3
-
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from fastapi import APIRouter
+from email_validator import validate_email, EmailNotValidError
 
 router = APIRouter()
 
@@ -68,5 +68,10 @@ def register(data: Register_Data):
     #user = User(data.username, data.email, data.password)
     #db["users"].insert_one(user.to_dict())
     #return {"status": "success", "message": "User registered in successfully"}
+    if data.username and data.email and data.password:
+        try:
+            validate_email(data.email)
+        except EmailNotValidError as e:
+            return {"status": "error", "message": str(e)}
     create_user(data.username, data.email, data.password)
     return RedirectResponse(url="/login-page", status_code=302)
