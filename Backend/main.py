@@ -5,7 +5,7 @@ from fastapi.responses import FileResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
 from auth import router as auth_router
-from dbm import sqlite3
+import sqlite3
 
 app = FastAPI()
 app.include_router(auth_router)
