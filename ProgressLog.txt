@@ -4,6 +4,7 @@
 -Changed sqlite3 import to remove call to dbm for sqlite3.
 -Closed bug log 0004.
 -Opened bug log 0005.
+-Changed default return value for login function in auth.py to redirect user back to login page upon an unsuccessful login.
 
 3/24/2026
 -Implemented user creation function in auth.py using sqlite.
