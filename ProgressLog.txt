@@ -1,3 +1,6 @@
+3/25/2026
+-Beginning new testing session.
+
 3/24/2026
 -Implemented user creation function in auth.py using sqlite.
 -Implemented user creation in register function in auth.py.
