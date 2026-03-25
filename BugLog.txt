@@ -7,6 +7,17 @@ Example.
 Resolution:
 Solution.
 
+[Open] Sqlite3 cannot be imported.
+ID: 0004
+Date Opened: 3/18/2026
+Date Closed: N/A 
+Description:
+An import error in main.py where sqlite3 cannot be imported from the dbm library and 
+causes system to fail upon starting.
+Resolution:
+[Work in progress]
+
+
 [Closed] User registry not found.
 ID: 0003
 Date Opened: 3/18/2026
@@ -17,7 +28,6 @@ Link to user registry page in login.html fails to send user to register page and
 Resolution:
 Implemented register-page function to direct users to user registry page and connect the 
 registry to the project. Edited url in login page's link reference.
-
 
 [Closed] Login redirect not operational.
 ID: 0002

@@ -1,5 +1,6 @@
 3/25/2026
 -Beginning new testing session.
+-Opened bug log 004.
 
 3/24/2026
 -Implemented user creation function in auth.py using sqlite.
