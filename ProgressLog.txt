@@ -5,6 +5,9 @@
 -Closed bug log 0004.
 -Opened bug log 0005.
 -Changed default return value for login function in auth.py to redirect user back to login page upon an unsuccessful login.
+-Edited fetch parameter in auth.js login function.
+-Changed Login_Data to hold a dict as its data parameter.
+-Ending test session for the day.
 
 3/24/2026
 -Implemented user creation function in auth.py using sqlite.
