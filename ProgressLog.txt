@@ -3,6 +3,7 @@
 -Opened bug log 0004.
 -Changed sqlite3 import to remove call to dbm for sqlite3.
 -Closed bug log 0004.
+-Opened bug log 0005.
 
 3/24/2026
 -Implemented user creation function in auth.py using sqlite.

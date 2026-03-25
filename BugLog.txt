@@ -7,10 +7,19 @@ Example.
 Resolution:
 Solution.
 
+[Open] Improper response to incorrect login.
+ID: 0005
+Date Opened: 3/25/2026
+Date Closed: N/A 
+Description:
+Login page delivered improper response to incorrect user login and failed to return a page.
+Resolution:
+[Work in Progress]
+
 [Closed] Sqlite3 cannot be imported.
 ID: 0004
-Date Opened: 3/18/2026
-Date Closed: N/A 
+Date Opened: 3/25/2026
+Date Closed: 3/25/2026
 Description:
 An import error in main.py where sqlite3 cannot be imported from the dbm library and 
 causes system to fail upon starting.
