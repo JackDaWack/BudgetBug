@@ -7,6 +7,7 @@
 -Fixed event listenters in auth.js and added submission and success handling.
 -Modified login endpoint to retuun JSON responses.
 -Fixed frontend path issues.
+-Ended testing session.
 
 3/25/2026
 -Beginning new testing session.
