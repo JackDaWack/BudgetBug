@@ -4,6 +4,9 @@
 -Updated login-form in login.html.
 -Added login-form event listener.
 -Changed return values in auth.py login function from redirects to json values.
+-Fixed event listenters in auth.js and added submission and success handling.
+-Modified login endpoint to retuun JSON responses.
+-Fixed frontend path issues.
 
 3/25/2026
 -Beginning new testing session.

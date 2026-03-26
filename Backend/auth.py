@@ -56,8 +56,12 @@ def login(data: Login_Data):
     #if user and user["password"] == data.password:
     #    return {"status": "success", "message": "User logged in successfully"}
     #return {"status": "error", "message": "User login failed"}
-    if get_user(data.username) and get_user(data.username)["password"] == data.password:
-        return {"success": True}
+    user = get_user(data.username)
+    if user and user["password"] == data.password:
+        from fastapi.responses import JSONResponse
+        response = JSONResponse(content={"success": True})
+        response.set_cookie(key="user", value=data.username)
+        return response
     return {"success": False}
 
 @router.post("/register")
@@ -74,4 +78,4 @@ def register(data: Register_Data):
         except EmailNotValidError as e:
             return {"status": "error", "message": str(e)}
     create_user(data.username, data.email, data.password)
-    return RedirectResponse(url="/login-page", status_code=302)
+    return {"status": "success", "message": "User registered successfully"}

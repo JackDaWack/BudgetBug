@@ -14,7 +14,8 @@ Date Closed: N/A
 Description:
 Login page delivered improper response to incorrect user login and failed to return a page.
 Resolution:
-[Work in Progress]
+Fixed event listenters in auth.js and added submission and success handling. Modified login 
+endpoint to retuun JSON responses. Fixed frontend path issues.
 
 [Closed] Sqlite3 cannot be imported.
 ID: 0004

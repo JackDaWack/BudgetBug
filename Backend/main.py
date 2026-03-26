@@ -18,7 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-frontend_path = Path(__file__).parent.parent / "frontend"
+frontend_path = Path(__file__).parent.parent / "Frontend"
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 def database_connect():
