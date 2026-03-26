@@ -1,6 +1,9 @@
 3/26/2026
 -Began new testing session.
 -Reverted Login_Data class to old format.
+-Updated login-form in login.html.
+-Added login-form event listener.
+-Changed return values in auth.py login function from redirects to json values.
 
 3/25/2026
 -Beginning new testing session.

@@ -57,8 +57,8 @@ def login(data: Login_Data):
     #    return {"status": "success", "message": "User logged in successfully"}
     #return {"status": "error", "message": "User login failed"}
     if get_user(data.username) and get_user(data.username)["password"] == data.password:
-        return RedirectResponse(url="/", status_code=302)
-    return RedirectResponse(url="/login-page", status_code=302)
+        return {"success": True}
+    return {"success": False}
 
 @router.post("/register")
 def register(data: Register_Data):

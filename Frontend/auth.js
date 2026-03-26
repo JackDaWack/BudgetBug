@@ -29,7 +29,9 @@ async function register() {
 }
 
 const login_button = document.getElementById("login-button");
+const login_form = document.getElementById("login-form");
 const register_button = document.getElementById("register-button");
 
+login_form.addEventListener("submit", async (e) => {e.preventDefault(); await login();});
 login_button.addEventListener("click",login());
 register_button.addEventListener("click",register());
