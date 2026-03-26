@@ -19,7 +19,8 @@ class User:
         return {"username" : self.username, "email" : self.email, "password" : self.password}
 
 class Login_Data(BaseModel):
-    extraction: dict
+    username: str
+    password: str
 
 class Register_Data(BaseModel):
     username: str
@@ -55,7 +56,7 @@ def login(data: Login_Data):
     #if user and user["password"] == data.password:
     #    return {"status": "success", "message": "User logged in successfully"}
     #return {"status": "error", "message": "User login failed"}
-    if get_user(data.extraction.get("username")) and get_user(data.extraction.get("username"))["password"] == data.extraction.get("password"):
+    if get_user(data.username) and get_user(data.username)["password"] == data.password:
         return RedirectResponse(url="/", status_code=302)
     return RedirectResponse(url="/login-page", status_code=302)
 

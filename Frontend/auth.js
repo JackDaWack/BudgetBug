@@ -2,7 +2,7 @@ async function login() {
     try {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-        const response = await fetch("/login-page", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,password})})
+        const response = await fetch("/login", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,password})})
         if (!response.ok) {
             throw new Error("User login request failed");
         }

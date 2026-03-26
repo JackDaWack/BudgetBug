@@ -1,3 +1,7 @@
+3/26/2026
+-Began new testing session.
+-Reverted Login_Data class to old format.
+
 3/25/2026
 -Beginning new testing session.
 -Opened bug log 0004.
