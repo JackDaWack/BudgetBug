@@ -31,7 +31,7 @@ def init_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE,
             email TEXT UNIQUE,
-            password TEXT
+            password BINARY
         )
     """)
     db.connection.commit()

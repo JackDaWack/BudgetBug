@@ -4,6 +4,7 @@ from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from fastapi import APIRouter
 from email_validator import validate_email, EmailNotValidError
+import bcrypt
 
 router = APIRouter()
 
@@ -57,7 +58,7 @@ def login(data: Login_Data):
     #    return {"status": "success", "message": "User logged in successfully"}
     #return {"status": "error", "message": "User login failed"}
     user = get_user(data.username)
-    if user and user["password"] == data.password:
+    if user and bcrypt.checkpw(data.password, user["password"]):
         from fastapi.responses import JSONResponse
         response = JSONResponse(content={"success": True})
         response.set_cookie(key="user", value=data.username)
@@ -77,5 +78,5 @@ def register(data: Register_Data):
             validate_email(data.email)
         except EmailNotValidError as e:
             return {"status": "error", "message": str(e)}
-    create_user(data.username, data.email, data.password)
+    create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8'))
     return {"status": "success", "message": "User registered successfully"}

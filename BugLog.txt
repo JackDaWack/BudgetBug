@@ -7,7 +7,7 @@ Example.
 Resolution:
 Solution.
 
-[Open] Improper response to incorrect login.
+[Closed] Improper response to incorrect login.
 ID: 0005
 Date Opened: 3/25/2026
 Date Closed: N/A 
