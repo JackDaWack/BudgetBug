@@ -7,10 +7,19 @@ Example.
 Resolution:
 Solution.
 
+[Open] User Registry Failure.
+ID: 0006
+Date Opened: 3/28/2026
+Date Closed: N/A
+Description: 
+Registry page crashes due to issues with data extraction from input format.
+Resolution:
+[In Progress]
+
 [Closed] Improper response to incorrect login.
 ID: 0005
 Date Opened: 3/25/2026
-Date Closed: N/A 
+Date Closed: 3/26/2026
 Description:
 Login page delivered improper response to incorrect user login and failed to return a page.
 Resolution:

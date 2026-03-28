@@ -2,6 +2,9 @@
 -Installed bcyrpt for password encyption.
 -Implemented password hashing in auth.py.
 -Changed data type in sql user schema from txt to binary for passwords.
+-Began new testing session.
+-Closed bug log 0005.
+-Opened bug log 0006.
 
 3/26/2026
 -Began new testing session.
