@@ -1,3 +1,6 @@
+3/29/2026
+-Edited return types in auth.py register function.
+
 3/28/2026
 -Installed bcyrpt for password encyption.
 -Implemented password hashing in auth.py.

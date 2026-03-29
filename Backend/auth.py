@@ -3,6 +3,7 @@ import sqlite3
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 from email_validator import validate_email, EmailNotValidError
 import bcrypt
 
@@ -59,7 +60,6 @@ def login(data: Login_Data):
     #return {"status": "error", "message": "User login failed"}
     user = get_user(data.username)
     if user and bcrypt.checkpw(data.password, user["password"]):
-        from fastapi.responses import JSONResponse
         response = JSONResponse(content={"success": True})
         response.set_cookie(key="user", value=data.username)
         return response
@@ -76,7 +76,10 @@ def register(data: Register_Data):
     if data.username and data.email and data.password:
         try:
             validate_email(data.email)
+            create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8'))
+            response = JSONResponse(content={"success": True})
+            response.set_cookie(key="user", value=data.username)
+            return response
         except EmailNotValidError as e:
             return {"status": "error", "message": str(e)}
-    create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8'))
-    return {"status": "success", "message": "User registered successfully"}
+    return {"success": False}
