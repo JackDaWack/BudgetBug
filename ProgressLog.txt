@@ -1,3 +1,11 @@
+4/1/2026
+-Changed data-checking conditions in auth.js.
+-Fixed return statements in auth.py's register function.
+-Added defer attribute to script calls in login.html and register.html.
+-Encapsulated register function's return statements in auth.py into JSONResponses.
+-Added credentials attribute to auth.js register function.
+-Added default prevention in auth.js.
+
 3/29/2026
 -Edited return types in auth.py register function.
 

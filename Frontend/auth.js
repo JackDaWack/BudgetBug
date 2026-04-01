@@ -1,14 +1,9 @@
 console.log("auth.js loaded");
 
-const login_button = document.getElementById("login-button");
-const login_form = document.getElementById("login-form");
-const register_button = document.getElementById("register-button");
-const register_form = document.getElementById("register-form");
-
 async function login() {
     try {
-        const username = login_form.querySelector("#username").value;
-        const password = login_form.querySelector("#password").value;
+        const username = document.querySelector("#login-form #username").value;
+        const password = document.querySelector("#login-form #password").value;
         const response = await fetch("/login", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,password})})
         if (!response.ok) {
             throw new Error("User login request failed");
@@ -22,32 +17,37 @@ async function login() {
         }
     }
     catch(err){console.error("Error calling backend:", err);}
-
 }
 
 async function register() {
+    document.preventDefault();
     try{
-        const username = document.getElementById("username").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const response = await fetch("/register", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,email,password})})
+        const username = document.querySelector("#register-form #username").value;
+        const email = document.querySelector("#register-form #email").value;
+        const password = document.querySelector("#register-form #password").value;
+        const response = await fetch("/register", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,email,password}), credentials: "include"})
         if (!response.ok) {
             throw new Error("User registry request failed");
         }
         const data = await response.json();
         console.log("Server response:", data);
-        if (data.status === "success") {
+        if (data.success) {
             window.location.href = "/login-page";
         } else {
-            alert(data.message);
+            alert(data.message || "Registration failed");
         }
     }
     catch(err){console.error("Error calling backend:", err);}
 }
 
-
-
-login_form.addEventListener("submit", async (e) => {e.preventDefault(); await login();});
-if (register_form) {
-    register_form.addEventListener("submit", async (e) => {e.preventDefault(); await register();});
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const login_form = document.getElementById("login-form");
+    const register_form = document.getElementById("register-form");
+    
+    if (login_form) {
+        login_form.addEventListener("submit", async (e) => {e.preventDefault(); await login();});
+    }
+    if (register_form) {
+        register_form.addEventListener("submit", async (e) => {e.preventDefault(); await register();});
+    }
+});

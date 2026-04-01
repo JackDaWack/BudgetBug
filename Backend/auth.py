@@ -79,7 +79,7 @@ def register(data: Register_Data):
             create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8'))
             response = JSONResponse(content={"success": True})
             response.set_cookie(key="user", value=data.username)
-            return response
+            return JSONResponse(content={"success": False, "message": str(e)},status_code=400)
         except EmailNotValidError as e:
-            return {"status": "error", "message": str(e)}
-    return {"success": False}
+            return JSONResponse(content={"success": False, "message": str(e)},status_code=400)
+    return JSONResponse(content={"success": False, "message": "Missing required fields"},status_code=400)
