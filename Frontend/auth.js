@@ -20,15 +20,12 @@ async function login() {
 }
 
 async function register() {
-    document.preventDefault();
     try{
         const username = document.querySelector("#register-form #username").value;
         const email = document.querySelector("#register-form #email").value;
         const password = document.querySelector("#register-form #password").value;
         const response = await fetch("/register", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({username,email,password}), credentials: "include"})
-        if (!response.ok) {
-            throw new Error("User registry request failed");
-        }
+        
         const data = await response.json();
         console.log("Server response:", data);
         if (data.success) {

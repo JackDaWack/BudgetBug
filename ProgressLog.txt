@@ -5,6 +5,7 @@
 -Encapsulated register function's return statements in auth.py into JSONResponses.
 -Added credentials attribute to auth.js register function.
 -Added default prevention in auth.js.
+-Removed default prevention and event checking in auth.js register function.
 
 3/29/2026
 -Edited return types in auth.py register function.
