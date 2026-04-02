@@ -7,14 +7,14 @@ Example.
 Resolution:
 Solution.
 
-[Open] User Registry Failure.
+[Closed] User Registry Failure.
 ID: 0006
 Date Opened: 3/28/2026
-Date Closed: N/A
+Date Closed: 4/2/2026
 Description: 
 Registry page crashes due to issues with data extraction from input format.
 Resolution:
-[In Progress]
+Implemented new version of register in auth.py and in auth.js better suited to the data format.
 
 [Closed] Improper response to incorrect login.
 ID: 0005

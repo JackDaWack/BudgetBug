@@ -1,3 +1,10 @@
+4/2/2026
+-Implemented new version of register in auth.py.
+-Implemented new version of register in auth.js.
+-Fixed password checking in auth.py login.
+-Closed bug log 0006.
+-Added logout implementation.
+
 4/1/2026
 -Changed data-checking conditions in auth.js.
 -Fixed return statements in auth.py's register function.

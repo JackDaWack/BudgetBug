@@ -50,16 +50,10 @@ def create_user(username: str, email: str, password: str):
     db.connection.commit()
     db.connection.close()
 
-
 @router.post("/login")
 def login(data: Login_Data):
-    #db = main.database_connect()
-    #user = db["users"].find_one({"username": data.username})
-    #if user and user["password"] == data.password:
-    #    return {"status": "success", "message": "User logged in successfully"}
-    #return {"status": "error", "message": "User login failed"}
     user = get_user(data.username)
-    if user and bcrypt.checkpw(data.password, user["password"]):
+    if user and bcrypt.checkpw(data.password.encode('utf-8'), user["password"]):
         response = JSONResponse(content={"success": True})
         response.set_cookie(key="user", value=data.username)
         return response
@@ -67,19 +61,25 @@ def login(data: Login_Data):
 
 @router.post("/register")
 def register(data: Register_Data):
-    #db = main.database_connect()
-    #if db["users"].find_one({"username": data.username}):
-    #    return {"status": "error", "message": "User already exists"}
-    #user = User(data.username, data.email, data.password)
-    #db["users"].insert_one(user.to_dict())
-    #return {"status": "success", "message": "User registered in successfully"}
-    if data.username and data.email and data.password:
-        try:
-            validate_email(data.email)
-            create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8'))
-            response = JSONResponse(content={"success": True})
-            response.set_cookie(key="user", value=data.username)
-            return JSONResponse(content={"success": False, "message": str(e)},status_code=400)
-        except EmailNotValidError as e:
-            return JSONResponse(content={"success": False, "message": str(e)},status_code=400)
-    return JSONResponse(content={"success": False, "message": "Missing required fields"},status_code=400)
+    if get_user(data.username):
+        return JSONResponse(content={"success": False, "message": "Username already exists"})
+    if get_user(data.email):
+        return JSONResponse(content={"success": False, "message": "Email already exists"})
+    try:
+        validate_email(data.email)
+    except EmailNotValidError as e:
+        return {"success": False, "message": str(e)}
+    
+    hashed_password = bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt())
+    
+    create_user(data.username, data.email, hashed_password)
+
+    response = JSONResponse(content={"success": True, "message": "User registered successfully"})
+    
+    return JSONResponse(content={"success": True, "message": "User registered successfully"})
+
+@router.post("/logout")
+def logout():    
+    response = JSONResponse(content={"success": True})
+    response.delete_cookie(key="user")
+    return response
