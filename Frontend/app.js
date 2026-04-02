@@ -27,5 +27,3 @@ async function logout() {
 
 const signal = document.getElementById("signal");
 signal.addEventListener("click", detect_signal);
-const logOutButton = document.getElementById("logout-button");
-logOutButton.addEventListener("click", logout);

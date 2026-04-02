@@ -77,3 +77,9 @@ def register(data: Register_Data):
     response = JSONResponse(content={"success": True, "message": "User registered successfully"})
     
     return JSONResponse(content={"success": True, "message": "User registered successfully"})
+
+@router.post("/logout")
+def logout():
+    response = JSONResponse(content={"success": True})
+    response.delete_cookie(key="user")
+    return response

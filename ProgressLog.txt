@@ -5,6 +5,7 @@
 -Closed bug log 0006.
 -Added logout implementation.
 -Moved logout implementation to main.py from auth.py.
+-Created logout.html
 
 4/1/2026
 -Changed data-checking conditions in auth.js.

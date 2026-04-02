@@ -4,11 +4,11 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
-from auth import router as auth_router
+import auth
 import sqlite3
 
 app = FastAPI()
-app.include_router(auth_router)
+app.include_router(auth.router)
 
 
 app.add_middleware(
