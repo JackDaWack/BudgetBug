@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware as CORS
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
 from pymongo import MongoClient
 from pathlib import Path
 from auth import router as auth_router
@@ -65,3 +65,8 @@ async def run_function():
     signal_recieved()
     return {"status": "success"}
 
+@app.post("/logout")
+def logout():    
+    response = JSONResponse(content={"success": True})
+    response.delete_cookie(key="user")
+    return response

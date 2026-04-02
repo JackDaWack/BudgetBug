@@ -4,6 +4,7 @@
 -Fixed password checking in auth.py login.
 -Closed bug log 0006.
 -Added logout implementation.
+-Moved logout implementation to main.py from auth.py.
 
 4/1/2026
 -Changed data-checking conditions in auth.js.
