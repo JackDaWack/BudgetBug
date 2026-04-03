@@ -7,14 +7,14 @@ Example.
 Resolution:
 Solution.
 
-[Open] Failure to retrieve style.css.
+[Closed] Failure to retrieve style.css.
 ID: 0007
 Date Opened: 4/3/2026
-Date Closed: N/A
+Date Closed: 4/3/2026
 Description:
 Page fails to retrieve style.css upon loading.
 Resolution:
-[In Progress]
+Changed path in page references to style.css to "/static/style.css"
 
 [Closed] User Registry Failure.
 ID: 0006

@@ -4,6 +4,8 @@
 -Implemented header and body formats in style.css.
 -Linked style.css in index, login and register pages.
 -Opened bug log 0007.
+-Changed path in page references to style.css to "/static/style.css"
+-Closed bug log 0007.
 
 4/2/2026
 -Implemented new version of register in auth.py.
