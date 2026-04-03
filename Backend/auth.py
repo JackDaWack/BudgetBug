@@ -69,13 +69,8 @@ def register(data: Register_Data):
         validate_email(data.email)
     except EmailNotValidError as e:
         return {"success": False, "message": str(e)}
-    
     hashed_password = bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt())
-    
     create_user(data.username, data.email, hashed_password)
-
-    response = JSONResponse(content={"success": True, "message": "User registered successfully"})
-    
     return JSONResponse(content={"success": True, "message": "User registered successfully"})
 
 

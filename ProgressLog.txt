@@ -1,3 +1,9 @@
+4/3/2026
+-Created style.css file in frontend.
+-Marked UI template goal in readme file as In Progress.
+-Implemented header and body formats in style.css.
+-Linked style.css in index, login and register pages.
+
 4/2/2026
 -Implemented new version of register in auth.py.
 -Implemented new version of register in auth.js.

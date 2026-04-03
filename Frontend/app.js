@@ -15,7 +15,6 @@ async function logout() {
         method: "POST",
         credentials: "include"
     });
-
     localStorage.removeItem("access_token"); 
     window.location.href = "/login-page";
 }
