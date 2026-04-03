@@ -37,26 +37,11 @@ async function register() {
 
 }
 
-async function logout() {
-    try {
-        const response = await fetch("/logout", {method: "POST"});
-        const data = await response.json();
-        console.log("Backend response:", data);
-        if (data.success) {
-            window.location.href = "/login-page";
-        } else {
-            alert("Logout failed");
-        }
-    } catch (err) {
-        console.error("Error calling backend:", err);
-    }
-}
 
 
 document.addEventListener("DOMContentLoaded", function() {
     const login_form = document.getElementById("login-form");
     const register_form = document.getElementById("register-form");
-    const logout_page = document.getElementById("logout-page");
     
     if (login_form) {
         login_form.addEventListener("submit", async (e) => {e.preventDefault(); await login();});

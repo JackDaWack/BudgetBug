@@ -9,21 +9,21 @@ async function detect_signal() {
     }
 
 }
+
 async function logout() {
-    try {
-        const response = await fetch("/logout", {method: "POST"});
-        const data = await response.json();
-        console.log("Backend response:", data); 
-        if (data.success) {
-            window.location.href = "/login-page";
-        } else {
-            alert("Logout failed");
-        } 
-    } catch (err) {
-        console.error("Error calling backend:", err);
-    }
+    await fetch("/logout", {
+        method: "POST",
+        credentials: "include"
+    });
+
+    localStorage.removeItem("access_token"); 
+    window.location.href = "/login-page";
 }
 
+const logoutBtn = document.getElementById("logoutBtn");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", logout);
+}
 
 const signal = document.getElementById("signal");
 signal.addEventListener("click", detect_signal);

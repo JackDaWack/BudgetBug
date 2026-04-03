@@ -45,6 +45,12 @@ def login_page():
 def register_page():
     return FileResponse(frontend_path / "register.html")
 
+@app.post("/logout")
+def logout():
+    response = JSONResponse(content={"success": True})
+    response.delete_cookie(key="user")
+    return response
+
 @app.get("/")
 def home(request: Request):
     init_db()
@@ -63,10 +69,6 @@ def signal_recieved():
 @app.post("/api/run")
 async def run_function():
     signal_recieved()
+    print("Function executed successfully")
     return {"status": "success"}
 
-@app.post("/logout")
-def logout():    
-    response = JSONResponse(content={"success": True})
-    response.delete_cookie(key="user")
-    return response
