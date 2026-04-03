@@ -5,7 +5,7 @@ A simple budgeting app that you can use to enter your income and expenses as wel
 This project is currently in development and not yet functional. See ProgressLog.txt for updates to the project.
 
 #### Planned Features
-- User authentication with login and registry. (In Progress)
+- User authentication with login and registry. (Complete)
 - Friendly UI template.
 - Financial profiles that log income, current savings and expenses.
 - Financial goals.

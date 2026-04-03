@@ -7,6 +7,7 @@
 -Moved logout implementation to main.py from auth.py.
 -Created logout.html
 -Removed logut.html and started with new logout implementation.
+-Marked user login and registry goal on readme file as complete.
 
 4/1/2026
 -Changed data-checking conditions in auth.js.
