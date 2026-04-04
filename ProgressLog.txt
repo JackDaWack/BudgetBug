@@ -8,6 +8,9 @@
 -Closed bug log 0007.
 -Added implementation for h1, form, label, button, and input sections in style.css
 -Edited content in index.html
+-Cleaned up unused code.
+-Added comments to vital functions in backend.
+-Added comments to vital functions in frontend.
 
 4/2/2026
 -Implemented new version of register in auth.py.

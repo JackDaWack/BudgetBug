@@ -37,26 +37,28 @@ def init_db():
     db.connection.commit()
     db.connection.close()
 
+#Login page endpoint, serves the login.html file to the frontend when the user navigates to /login-page, 
+#which is the default page when the user first visits the site.
 @app.get("/login-page")
 def login_page():
     return FileResponse(frontend_path / "login.html")
 
+#Register page endpoint, serves the register.html file to the frontend when the user navigates to /register-page, 
+#which is linked in the login.html file. 
 @app.get("/register-page")
 def register_page():
     return FileResponse(frontend_path / "register.html")
 
+#Logout endpoint, deletes the user cookie and returns a success message for the frontend to handle 
+#and redirect the user to the login page. This is linked in the index.html file as a logout button.
 @app.post("/logout")
 def logout():
-    response = JSONResponse(content={"success": True})
-    response.delete_cookie(key="user")
-    return response
+    return JSONResponse(content={"success": True}).delete_cookie(key="user")
 
+#Index page, checks for cookie and redirects to login if not found, otherwise serves index.html
 @app.get("/")
 def home(request: Request):
     init_db()
-    #db = database_connect()
-    #if db["users"].find_one({"username": "Developer01"}):
-    #    print("Developer01 exists in the database")
     incoming_user = request.cookies.get("user")
     if not incoming_user:
         return RedirectResponse(url="/login-page")

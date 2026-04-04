@@ -9,17 +9,7 @@ import bcrypt
 
 router = APIRouter()
 
-#app = main.app
-
-class User:
-    def __init__(self, username: str, email: str, password: str):
-        self.username = username
-        self.email = email
-        self.password = password
-
-    def to_dict(self):
-        return {"username" : self.username, "email" : self.email, "password" : self.password}
-
+#Data models for login and registration requests.
 class Login_Data(BaseModel):
     username: str
     password: str
@@ -29,12 +19,7 @@ class Register_Data(BaseModel):
     email: str
     password: str
 
-def retrieve_user(username: str):
-    db = main.database_connect()
-    if db["users"].find_one({"username": username}):
-        return User(db["users"].find_one({"username": username})["username"], db["users"].find_one({"username": username})["email"], db["users"].find_one({"username": username})["password"])
-    return None
-
+#Helper functions for database interactions, including getting a user by username, creating a new user, and validating email addresses.
 def get_user(username: str):
     db = sqlite3.connect("users.db").cursor()
     db.execute("SELECT * FROM users WHERE username = ?", (username,))
@@ -50,6 +35,7 @@ def create_user(username: str, email: str, password: str):
     db.connection.commit()
     db.connection.close()
 
+#The login endpoint checks the provided credentials against the database and sets a cookie if successful.
 @router.post("/login")
 def login(data: Login_Data):
     user = get_user(data.username)
@@ -59,6 +45,7 @@ def login(data: Login_Data):
         return response
     return {"success": False}
 
+#The registration endpoint checks for existing users and validates the email before creating a new user.
 @router.post("/register")
 def register(data: Register_Data):
     if get_user(data.username):
@@ -69,8 +56,7 @@ def register(data: Register_Data):
         validate_email(data.email)
     except EmailNotValidError as e:
         return {"success": False, "message": str(e)}
-    hashed_password = bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt())
-    create_user(data.username, data.email, hashed_password)
+    create_user(data.username, data.email, bcrypt.hashpw(data.password.encode('utf-8'), bcrypt.gensalt()))
     return JSONResponse(content={"success": True, "message": "User registered successfully"})
 
 
