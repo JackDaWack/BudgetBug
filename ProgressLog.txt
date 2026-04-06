@@ -3,7 +3,10 @@
 -Marked friendly UI template on readme as complete
 -Added new profiles.js file.
 -Added new profiles.py file.
--Marked financial profiles goal as in progress.
+-Marked budgeting profiles goal as in progress.
+-Added and implemented BudgetProfile class to profiles.py
+-Added and implemented base for budget profile creation middleware in profiles.js
+-Added base implementation for profile_creator.html
 
 4/3/2026
 -Created style.css file in frontend.

@@ -7,7 +7,7 @@ This project is currently in development and not yet functional. See ProgressLog
 #### Planned Features
 - User authentication with login and registry. (Complete)
 - Friendly UI template. (Complete)
-- Financial profiles that log income, current savings and expenses. (In Progress)
+- Budgeting profiles that log income, current savings and expenses. (In Progress)
 - Financial goals.
 
 ### Author Profile
