@@ -1,3 +1,10 @@
+4/6/2026
+-Added new profile and profile_creator html files.
+-Marked friendly UI template on readme as complete
+-Added new profiles.js file.
+-Added new profiles.py file.
+-Marked financial profiles goal as in progress.
+
 4/3/2026
 -Created style.css file in frontend.
 -Marked UI template goal in readme file as In Progress.
