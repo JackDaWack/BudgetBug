@@ -7,6 +7,7 @@
 -Added and implemented BudgetProfile class to profiles.py
 -Added and implemented base for budget profile creation middleware in profiles.js
 -Added base implementation for profile_creator.html
+-Added new goal to readme.
 
 4/3/2026
 -Created style.css file in frontend.

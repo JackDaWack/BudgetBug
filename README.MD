@@ -9,6 +9,7 @@ This project is currently in development and not yet functional. See ProgressLog
 - Friendly UI template. (Complete)
 - Budgeting profiles that log income, current savings and expenses. (In Progress)
 - Financial goals.
+- Graphic pie-chart repesentation of budget.
 
 ### Author Profile
 Jackson Netter
