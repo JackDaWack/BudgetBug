@@ -5,6 +5,8 @@
 -Added new functions to profiles.js.
 -Added paragraph section to style.css
 -Edited content displayed in index.html
+-Implemented add_expenses and add_income FastAPI endpoints in profiles.py.
+-Implemented income_data and expense_data classes in profiles.py.
 
 4/6/2026
 -Added new profile and profile_creator html files.
