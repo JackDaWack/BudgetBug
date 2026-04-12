@@ -1,3 +1,11 @@
+4/12/2026
+-Replaced profile_creator with add_income and add_expenses.html files.
+-Added implementation for add_expenses.html
+-Added implementation for add_income.html
+-Added new functions to profiles.js.
+-Added paragraph section to style.css
+-Edited content displayed in index.html
+
 4/6/2026
 -Added new profile and profile_creator html files.
 -Marked friendly UI template on readme as complete
