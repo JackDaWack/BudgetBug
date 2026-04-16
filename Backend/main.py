@@ -65,12 +65,7 @@ def home(request: Request):
     print("We're live!")
     return FileResponse(frontend_path / "index.html")
 
-def signal_recieved():
-    print("We made contact!")
-
-@app.post("/api/run")
-async def run_function():
-    signal_recieved()
-    print("Function executed successfully")
-    return {"status": "success"}
+@app.get("/create_budget")
+def create_budget():
+    return FileResponse(frontend_path / "add_income.html")
 

@@ -1,3 +1,8 @@
+4/15/2026
+-Added new buttons to allow user to switch between add_income and add_expenses pages.
+-Implemented function to send user from index to budget creation pages.
+-Removed obsolete functions from app.js.
+
 4/12/2026
 -Replaced profile_creator with add_income and add_expenses.html files.
 -Added implementation for add_expenses.html
