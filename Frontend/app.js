@@ -6,7 +6,4 @@ async function logout() {
     window.location.href = "/login-page";
 }
 
-const logoutBtn = document.getElementById("logoutBtn");
-if (logoutBtn) {
-    logoutBtn.addEventListener("click", logout);
-}
+document.getElementById("logoutBtn").addEventListener("click", logout);

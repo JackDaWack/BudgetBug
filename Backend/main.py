@@ -63,7 +63,7 @@ def home(request: Request):
     if not incoming_user:
         return RedirectResponse(url="/login-page")
     print("We're live!")
-    return FileResponse(frontend_path / "index.html")
+    return FileResponse(frontend_path / "dashboard.html")
 
 @app.get("/create_budget")
 def create_budget():

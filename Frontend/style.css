@@ -64,3 +64,8 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+li {
+  display: inline-block;
+  margin-right: 15px; 
+}

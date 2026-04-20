@@ -1,3 +1,10 @@
+4/20/2026
+-Added dashboard.html to frontend.
+-Added UI implementation to dashboard.html.
+-Changed file response in main.py home from index.html to dashboard.html
+-Added format section in style.css for list items in dashboard.html
+-Removed index.html.
+
 4/15/2026
 -Added new buttons to allow user to switch between add_income and add_expenses pages.
 -Implemented function to send user from index to budget creation pages.
