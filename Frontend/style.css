@@ -65,7 +65,13 @@ input {
     border-radius: 4px;
 }
 
-li {
-  display: inline-block;
-  margin-right: 15px; 
+nav {
+    color: #333;
+    background-color: hsl(135, 100%, 38%);
+    hover {
+        background-color: #333;
+        color: hsl(150, 98%, 48%);
+    }
+    padding: 10px;
+    text-align: center;
 }

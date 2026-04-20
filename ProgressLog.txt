@@ -4,6 +4,9 @@
 -Changed file response in main.py home from index.html to dashboard.html
 -Added format section in style.css for list items in dashboard.html
 -Removed index.html.
+-Removed list itme format from header in dashboard.html and style.css
+-Implemented nav and nav format in dashboard.html and style.css
+-Removed hrefs in dashboard.html <a> classes
 
 4/15/2026
 -Added new buttons to allow user to switch between add_income and add_expenses pages.
