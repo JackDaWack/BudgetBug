@@ -22,7 +22,9 @@ frontend_path = Path(__file__).parent.parent / "Frontend"
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
 def database_connect():
-    return MongoClient("mongodb://localhost:27017/")["budgetbug_db"]
+    client = MongoClient("mongodb://localhost:27017/")
+    db = client["budget_app"]
+    return db
 
 def init_db():
     db = sqlite3.connect("users.db").cursor()

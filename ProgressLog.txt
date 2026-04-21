@@ -1,3 +1,10 @@
+4/21/2026
+-Added more implementation to database_connect in main.py.
+-Removed profiles.js, add_expenses.html, add_income.html, and profile.html.
+-Removed budgets and reports options from nav in dashboard.html
+-Added selection to dashboard.html featuring planned options for the user to select.
+-Implemented select format to style.css
+
 4/20/2026
 -Added dashboard.html to frontend.
 -Added UI implementation to dashboard.html.

@@ -12,16 +12,19 @@
         <h1>BudgetBug Dashboard</h1>
         <nav>
             <a>Home</a>
-            <a>Budgets</a>
-            <a>Reports</a>
             <a>Settings</a>
             <a id="logoutBtn">Logout</a>
         </nav>
     </header>
-
     <main>
         <section class="overview">
             <h2>Overview</h2>
+            <label>Budgets</label>
+            <select name="budgets_options" id="budgets_options">
+                <option value="options">--Options--</option>
+                <option value="create_new_budget">Create New Budget</option>
+                <option value="view_budgets">View Budgets</option>
+            </select>
         </section>
     </main>
 </html>

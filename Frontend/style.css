@@ -75,3 +75,12 @@ nav {
     padding: 10px;
     text-align: center;
 }
+
+select {
+    width: 50%;
+    height: 30px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
