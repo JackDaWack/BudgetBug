@@ -1,3 +1,11 @@
+4/22/2026
+-Added requirements.txt.
+-Added welcoming message section to dashboard.
+-Added and implemented /me endpoint in main.py.
+-Added load_user function to app.js with implementation.
+-Implemented p#welcome-message section in style.css.
+-Edited width in select section in style.css.
+
 4/21/2026
 -Added more implementation to database_connect in main.py.
 -Removed profiles.js, add_expenses.html, add_income.html, and profile.html.

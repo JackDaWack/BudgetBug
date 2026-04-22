@@ -67,6 +67,15 @@ def home(request: Request):
     print("We're live!")
     return FileResponse(frontend_path / "dashboard.html")
 
+@app.get("/api/me")
+def get_current_user(request: Request):
+    incoming_user = request.cookies.get("user")
+
+    if not incoming_user:
+        return JSONResponse(status_code=401, content={"error": "Not logged in"})
+
+    return {"username": incoming_user}
+
 @app.get("/create_budget")
 def create_budget():
     return FileResponse(frontend_path / "add_income.html")

@@ -6,4 +6,18 @@ async function logout() {
     window.location.href = "/login-page";
 }
 
+async function loadUser() {
+    try {
+        const res = await fetch("/api/me", {method: "GET", credentials: "include"});
+        if (!res.ok) throw new Error();
+        const user = await res.json();
+        document.getElementById("welcome-message").textContent = `Welcome to BudgetBug, ${user.username}!`;
+    } catch {
+        window.location.href = "/login-page";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", loadUser);
+
+
 document.getElementById("logoutBtn").addEventListener("click", logout);
