@@ -17,7 +17,9 @@ async function loadUser() {
     }
 }
 
+async function create_new_budget() {}
+
+async function view_budgets() {}
+
 document.addEventListener("DOMContentLoaded", loadUser);
-
-
 document.getElementById("logoutBtn").addEventListener("click", logout);
