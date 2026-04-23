@@ -2,6 +2,7 @@
 -Removed planned features section from readme.
 -Edited project status section in readme.
 -Added budgets_content div to dashboard.html.
+-Implemented event listener in app.js to update div when an option is selected. 
 
 4/22/2026
 -Added requirements.txt.

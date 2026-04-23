@@ -23,3 +23,14 @@ async function view_budgets() {}
 
 document.addEventListener("DOMContentLoaded", loadUser);
 document.getElementById("logoutBtn").addEventListener("click", logout);
+document.getElementById("budget-options").addEventListener("change", async (e) => {
+    const contentDiv = document.getElementById("budgets_content");
+    contentDiv.innerHTML = "";
+    if (e.target.value === "create_new_budget") {
+        //await create_new_budget();
+        contentDiv.textContent = "Create New Budget functionality coming soon!";
+    } else if (e.target.value === "view_budgets") {
+        //await view_budgets();
+        contentDiv.textContent = "View Budgets functionality coming soon!";
+    }
+});
