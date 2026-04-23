@@ -1,3 +1,8 @@
+4/23/2026
+-Removed planned features section from readme.
+-Edited project status section in readme.
+-Added budgets_content div to dashboard.html.
+
 4/22/2026
 -Added requirements.txt.
 -Added welcoming message section to dashboard.
