@@ -76,7 +76,5 @@ def get_current_user(request: Request):
 
     return {"username": incoming_user}
 
-@app.get("/create_budget")
 def create_budget():
-    return FileResponse(frontend_path / "add_income.html")
-
+    pass

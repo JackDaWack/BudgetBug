@@ -7,6 +7,7 @@
 -Edited width in select section in style.css.
 -Added placeholder function for budget creation handling in app.js.
 -Added placeholder function for retrieving existing budgets in app.js.
+-Removed unused endpoint in main.py.
 
 4/21/2026
 -Added more implementation to database_connect in main.py.
